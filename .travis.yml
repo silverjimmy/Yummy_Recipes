@@ -1,11 +1,10 @@
 language: python
-sudo: required
 python:
-  - "3.4"
-install:
-  - sudo pip install nose
-  - sudo pip install coveralls
-script:
-  - sudo nosetests --with-coverage
-after_success:
-  - coveralls
+  - "3.6"
+# command to install dependencies
+install: 
+- pip install -r requirements.txt
+- sudo pip install nose
+- sudo pip install coveralls
+# command to run tests
+script: pytest
