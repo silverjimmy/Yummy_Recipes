@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-
-{% block nav %}
+{% extends "base.html" %} {% block nav %}
 <div class="nav">
     <div class="container">
         <nav class="navbar navbar-default">
@@ -16,29 +14,28 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="pull-right">
-            <li><a href = '/'>Home</a></li>
-            <li><a href="/">Dashboard</a></li>
-            <li><a href='/logout'>Log out</a></li>
-        </ul>
+                        <li><a href='/'>Home</a></li>
+                        <li><a href="/">Dashboard</a></li>
+                        <li><a href='/logout'>Log out</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
     </div>
 </div>
 
-{% endblock %}
-{% block body %}
-    <h1>Create New recipe </h1>
-    <form action = "" method ="POST">
-        <div Class="form-group"> 
-            <label for = "name">Recipe Name : </label>
-            <input Class="form-control" type = "text" name = "name">
-        </div>
-        <div Class="form-group">
-            <label for = "description">Description : </label>
-            <textarea Class ="form-control"  name = "description" row ="3"></textarea>
-        </div>
-        <button type = "submit" Class="btn btn-primary pull-right">Save</button>
-    </form>
-    <p></p>
+{% endblock %} {% block body %}
+<h1>Create New recipe </h1>
+<form action="" method="POST">
+    <div Class="form-group">
+        <label for="name">Recipe Name</label>
+        <input Class="form-control" type="text" name="name">
+    </div>
+    <div Class="form-group">
+        <label for="description">Description</label>
+        <textarea Class="form-control" name="description" row="3"></textarea>
+    </div>
+    <button type="submit" Class="btn btn-primary pull-right">Save</button>
+</form>
+<p></p>
 {% endblock %}

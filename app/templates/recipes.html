@@ -1,6 +1,4 @@
-{% extends "base2.html" %}
-
-{% block nav %}
+{% extends "base2.html" %} {% block nav %}
 <div class="nav">
     <div class="container">
         <nav class="navbar navbar-default">
@@ -16,19 +14,18 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="pull-right">
-            <li><a href = '/'>Home</a></li>
-            <li><a href="/">Dashboard</a></li>
-            <li><a href='/logout'>Log out</a></li>
-        </ul>
+                        <li><a href='/'>Home</a></li>
+                        <li><a href="/">Dashboard</a></li>
+                        <li><a href='/logout'>Log out</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
     </div>
 </div>
 
-{% endblock %}
-{% block body %}
- <div class="container">
+{% endblock %} {% block body %}
+<div class="container">
     <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4" id="main">
@@ -41,8 +38,8 @@
         <table class="table-stripped table-hover">
             <thead>
                 <tr>
-                    <th>Recipe Name:</th>
-                    <th>Description:</th>
+                    <th>Recipe Name</th>
+                    <th>Description</th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -53,14 +50,14 @@
                 <tr>
                     <td>{{ item.name}}</td>
                     <td>{{ item.description}}</td>
-                    <td><a href={{'/recipes/'+item.recipe_id }}><button class="btn">Open</button></a></td>
-                    <td><a href={{'/recipes/'+item.recipe_id+'/update' }}><button class="btn">Edit</button></a></td>
-                    <td><a href={{'/recipes/'+item.recipe_id+'/delete' }}><button class="btn">Delete</button></a></td>
+                    <td><a href={{ '/recipes/'+item.recipe_id }}><button class="btn">Open</button></a></td>
+                    <td><a href={{ '/recipes/'+item.recipe_id+ '/update' }}><button class="btn">Edit</button></a></td>
+                    <td><a href={{ '/recipes/'+item.recipe_id+ '/delete' }}><button class="btn">Delete</button></a></td>
                 </tr>
                 {% endfor %}
-                
+
             </tbody>
         </table>
-        <a href ="/create_recipe"><button type='button' class="btn pull-right">New Recipe</button></a>
+        <a href="/create_recipe"><button type='button' class="btn pull-right">New Recipe</button></a>
     </div>
-{% endblock %}
+    {% endblock %}
