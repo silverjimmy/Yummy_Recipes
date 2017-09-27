@@ -7,4 +7,7 @@ install:
 - sudo pip install nose
 - sudo pip install coveralls
 # command to run tests
-script: pytest
+script:
+  - sudo nosetests --with-coverage
+after_success:
+  - coveralls
