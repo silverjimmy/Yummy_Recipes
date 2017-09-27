@@ -1,14 +1,10 @@
 language: python
 python:
-  - "3.6"
-# command to install dependencies
-install: 
+  - "3.4"
+before_script:
 - pip install -r requirements.txt
 - pip3 install flask
-- sudo pip install nose
-- sudo pip install coveralls
-# command to run tests
-script:
-  - sudo nosetests --with-coverage
-after_success:
+- pip install nose
+- pip install coveralls
+script: pytest
   - coveralls
