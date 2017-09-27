@@ -16,23 +16,23 @@ class TestUser(unittest.TestCase):
     def test_create_recipelist_success(self):
         """Testing whether a recipelist was successfully created,
         it should increase the length of self.recipelists"""
-        count_before = len(self.myuser.recipelists)
-        self.myuser.create_recipelist('African Coffee',
+        count_before = len(self.myuser.recipes)
+        self.myuser.create_recipe('African Coffee',
                                       'Try Coffee sundried and roasted coffee beans from kenya')
-        count_after = len(self.myuser.recipelists)
+        count_after = len(self.myuser.recipes)
         self.assertEqual(count_after, count_before + 1,
                          msg='count_after should equal count_before + 1')
 
     def test_create_recipelist_non_string_input(self):
         """Method should raise a type error for non string inputs"""
         self.assertRaises(TypeError,
-                          self.myuser.create_recipelist,
+                          self.myuser.create_recipe,
                           'Boil at 20 degrees', 20,
                           msg="Method only accept string inputs")
 
     def test_view_recipelists_success(self):
         """View_recipelists should return a list"""
-        recipelists = self.myuser.view_recipelists()
+        recipelists = self.myuser.view_recipes()
         self.assertIsInstance(recipelists, list)
 
 if __name__ == '__main__':
