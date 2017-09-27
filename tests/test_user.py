@@ -32,8 +32,8 @@ class TestUser(unittest.TestCase):
 
     def test_view_recipelists_success(self):
         """View_recipelists should return a list"""
-        bucketslists = self.myuser.view_recipelists()
-        self.assertIsInstance(bucketslists, list)
+        recipelists = self.myuser.view_recipelists()
+        self.assertIsInstance(recipelists, list)
 
 if __name__ == '__main__':
     unittest.main()
