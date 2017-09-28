@@ -1,18 +1,36 @@
-{% extends "base.html" %}
-
-
-{% block body %}
-<h2 class="text-center">Login Page</h2>
-    <form class="form-horizontal" action = "" method ="POST">
-        <div Class="form-group"> 
-            <label class="col-md-4 control-label" for = "username">Username : </label>
-            <input Class="form-control" type = "text" name = "username" required="">
+{% extends "base.html" %} {% block nav %}
+<div class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <a class="navbar-brand" href="/">Yummy Recipe</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="/createuser">SignUp</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
         </div>
-        <div Class="form-group">
-            <label class="col-md-4 control-label" for = "password">Password : </label>
-            <input Class ="form-control" type = "password" name = "password" required="">
-        </div>
-        <button type = "submit" Class="btn btn-success pull-right">Log in</button>
-        <button type = "submit" Class="btn btn-default pull-left"><a href="/createuser">Create Account</a></button>
-    </form>
+    </nav>
+</div>
+{% endblock %} {% block body %}
+<h2 class="text-center">Yummy Recipe</h2>
+<form class="form-horizontal" action="" method="POST">
+    <div Class="form-group">
+        <label class="col-md-4 control-label" for="username">Username : </label>
+        <input Class="form-control" type="text" name="username" required="">
+    </div>
+    <div Class="form-group">
+        <label class="col-md-4 control-label" for="password">Password : </label>
+        <input Class="form-control" type="password" name="password" required="">
+    </div>
+    <button type="submit" Class="btn btn-success pull-right">Log in</button>
+</form>
 {% endblock %}

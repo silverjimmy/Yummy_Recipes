@@ -2,9 +2,11 @@
 from .recipe import recipe
 from .activity import Activity
 
+
 class User:
     """Creates the user object and has methods for creating and
         viewingrecipes and activities"""
+
     def __init__(self, firstname, lastname, username, password, email):
         self.firstname = firstname
         self.lastname = lastname
@@ -16,6 +18,7 @@ class User:
     def create_recipe(self, name, description):
         """method creates a new recipe for current user with the given name and description"""
         self.recipes.append(recipe(name, description))
+
     def create_activity(self, recipe_name, activity_name, description):
         """method creates a new activity with activity_name and
            description in recipe of provided name"""
@@ -31,11 +34,13 @@ class User:
     def view_recipes(self):
         """method returns all the recipes for the current user"""
         return self.recipes
+
     def view_recipe_activities(self, recipe_name):
         """method returns a list of activities in a given bucket_list for the current user"""
         for recipe in self.recipes:
             if recipe.name == recipe_name:
                 return recipe.activities
+
     def delete_recipe(self, recipe_name):
         """Method deletes a recipe"""
         if isinstance(recipe_name, str):
@@ -46,7 +51,7 @@ class User:
 
     def delete_activity(self, recipe_id, activity_id):
         """Method deletes activity from recipe """
-        
+
         for recipe in self.recipes:
             if recipe.recipe_id == recipe_id:
                 recipe.remove_activity(activity_id)

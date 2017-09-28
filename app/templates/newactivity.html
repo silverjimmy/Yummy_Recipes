@@ -1,47 +1,39 @@
-{% extends "base.html" %}
-
-{% block nav %}
-<div class="nav">
-    <div class="container">
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+{% extends "base.html" %} {% block nav %}
+<div class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"><a href = '/'>Home</a></span>
-            <span class="icon-bar"><a href="/">Dashboard</a></span>
-            <span class="icon-bar"><a href='/logout'>Log out</a></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
-                    <a class="navbar-brand" href="/">Yummy Recipe</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="pull-right">
-            <li><a href = '/'>Home</a></li>
-            <li><a href="/">Dashboard</a></li>
-            <li><a href='/logout'>Log out</a></li>
-        </ul>
-                </div>
+                <a class="navbar-brand" href="/">Yummy Recipe</a>
             </div>
-        </nav>
-    </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="/login">LogOut</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
 </div>
+{% endblock %} {% block body %}
+<h1>Recipe Details</h1>
+<form action="" method="POST">
+    <div Class="form-group">
+        <label for="name">Name : </label>
+        <input Class="form-control" type="text" name="name">
+    </div>
+    <div Class="form-group">
+        <label for="description">Procedure : </label>
+        <textarea Class="form-control" name="description" row="3"></textarea>
+    </div>
 
 
-{% endblock %}
-{% block body %}
-    <h1>Recipe Details</h1>
-    <form action = "" method ="POST">
-        <div Class="form-group"> 
-            <label for = "name">Name : </label>
-            <input Class="form-control" type = "text" name = "name">
-        </div>
-        <div Class="form-group">
-            <label for = "description">Procedure : </label>
-            <textarea Class ="form-control"  name = "description" row ="3"></textarea>
-        </div>
-        
-        
-        <button type = "submit" Class="btn btn-primary pull-right">Save</button>
-    </form>
-    <p></p>
+    <button type="submit" Class="btn btn-primary pull-right">Save</button>
+</form>
+<p></p>
 {% endblock %}

@@ -4,12 +4,14 @@ from app.classes.planner import Planner
 
 PLAN = Planner()
 
+
 @app.route('/')
 def index():
     """View handles the index page of the app"""
     if 'name' in session:
         return render_template('home.html')
     return redirect(url_for('log_in'))
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def log_in():
@@ -25,6 +27,7 @@ def log_in():
         return render_template('login.html')
     return render_template('login.html')
 
+
 @app.route('/logout', methods=['GET', 'POST'])
 def log_out():
     """View handles longing out a user"""
@@ -33,6 +36,7 @@ def log_out():
         session.pop('name', None)
         return redirect(url_for('log_in'))
     return redirect(url_for('log_in'))
+
 
 @app.route('/createuser', methods=['GET', 'POST'])
 def create_user():
@@ -46,24 +50,27 @@ def create_user():
         return redirect(url_for('index'))
     return render_template('newuser.html')
 
+
 @app.route('/create_recipe', methods=['Get', 'POST'])
 def create_recipe():
     """View handles creating a new recipe"""
     if 'name' in session:
         if request.method == 'POST':
             PLAN.users[session['name']].create_recipe(request.form['name'],
-                                                          request.form['description'])
+                                                      request.form['description'])
             return redirect(url_for('view_recipes'))
         return render_template('newrecipe.html')
     return redirect(url_for('log_in'))
+
 
 @app.route('/recipes')
 def view_recipes():
     """view lists all recipes current"""
     if 'name' in session:
-        bucket = PLAN.users[session['name']].view_recipes()
-        return render_template('recipes.html', bucket=bucket)
+        recipebag = PLAN.users[session['name']].view_recipes()
+        return render_template('recipes.html', recipebag=recipebag)
     return redirect(url_for('log_in'))
+
 
 @app.route('/recipes/<recipe_id>/delete')
 def delete_recipe(recipe_id):
@@ -87,6 +94,7 @@ def create_activity(recipe_id):
         return render_template('newactivity.html')
     return redirect(url_for('log_in'))
 
+
 @app.route('/recipes/<recipe_id>', methods=['GET', 'POST'])
 def view_activities(recipe_id):
     """View lists all activities in a recipe"""
@@ -98,6 +106,8 @@ def view_activities(recipe_id):
                                recipe=recipe,
                                recipe_id=recipe_id)
     return redirect(url_for('log_in'))
+
+
 @app.route('/recipes/<recipe_id>/<activity_id>/delete')
 def delete_activity(recipe_id, activity_id):
     """View for deleting an activity"""
@@ -105,19 +115,23 @@ def delete_activity(recipe_id, activity_id):
         PLAN.users[session['name']].delete_activity(recipe_id, activity_id)
         return redirect(url_for('view_activities', recipe_id=recipe_id))
     return redirect(url_for('log_in'))
+
+
 @app.route('/recipes/<recipe_id>/update', methods=['GET', 'POST'])
 def update_recipe(recipe_id):
     """View for updating recipe"""
     if 'name' in session:
         if request.method == 'POST':
             PLAN.users[session['name']].update_recipe(recipe_id,
-                                                          request.form['name'],
-                                                          request.form['description'])
+                                                      request.form['name'],
+                                                      request.form['description'])
             return redirect(url_for('view_recipes'))
         recipe = PLAN.users[session['name']].get_recipe_from_id(recipe_id)
         return render_template('updaterecipe.html',
                                recipe=recipe)
     return redirect(url_for('log_in'))
+
+
 @app.route('/recipes/<recipe_id>/<activity_id>/update', methods=['GET', 'POST'])
 def update_activity(recipe_id, activity_id):
     """View for updating activity"""
@@ -128,7 +142,8 @@ def update_activity(recipe_id, activity_id):
                                                         request.form['name'],
                                                         request.form['description'])
             return redirect(url_for('view_activities', recipe_id=recipe_id))
-        activity = PLAN.users[session['name']].get_recipe_from_id(recipe_id).object_from_id(activity_id)
+        activity = PLAN.users[session['name']].get_recipe_from_id(
+            recipe_id).object_from_id(activity_id)
         return render_template('updateactivity.html', activity=activity)
 
     return redirect(url_for('log_in'))
