@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>{% block title %}{% endblock %}</title>
-    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+<title>{% block title %}{% endblock %}</title>
+<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel ="stylesheet">
+<link href = "{{ url_for('static', filename='css/style.css') }}" rel ="stylesheet">
 </head>
-
 <body>
-    {% block nav %}{% endblock %} {% block body %}{% endblock %}
+{% block nav %}{% endblock %}
 
+{% block body %}{% endblock %}
+       
 </body>
-
 </html>

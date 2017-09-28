@@ -1,4 +1,6 @@
-{% extends "base2.html" %} {% block nav %}
+{% extends "base2.html" %}
+
+{% block nav %}
 <div class="container">
     <nav class="navbar navbar-inverse">
         <div class="container">
@@ -21,43 +23,45 @@
     </nav>
 </div>
 
-{% endblock %} {% block body %}
-<div class="container">
+{% endblock %}
+{% block body %}
+ <div class="container">
     <div class="row">
         <div class="col-sm-6" id="main">
-            <h1><span>Recipe Procedure Details</span></h1>
+            <h1><span>Recipe Procedure</span></h1>
         </div>
         <div Class="col-sm-4"></div>
     </div>
 
     <div class="jumbotron">
-        <div class="container">
-            <h3>Recipe Name:{{ recipe }}</h3>
-            <table class="table-stripped table-hover">
-                <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Procedure Name</th>
-                        <th>Procedure Details</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for activity in activities %}
-                    <tr>
-                        <td>{{activity.activity_id}}</td>
-                        <td>{{ activity.name}}</td>
-                        <td>{{ activity.description}}
-                            <td>
-                                <td><button class="btn"><a>Edit<a></button></td>
-                                <td><a href={{ '/recipes/'+recipe_id+ '/'+activity.activity_id+ '/delete' }}><button class="btn">Delete</button></a></td>
-                    </tr>
-                    {% endfor %}
-
-                </tbody>
-            </table>
-            <a href={{ '/create_activity/'+recipe_id}}><button type='button' class="btn pull-right">New Procedure</button></a>
-        </div>
+        <h3>Recipe Name:</br></h3><p style="font-size: 20px;color: orangered"><span>{{ recipe }}</span><p>
+        <table class="table-stripped table-hover">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Procedure Name</th>
+                    <th>Procedure & ingredients</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for activity in activities %}
+                <tr><td class="col-md-1">{{activity.activity_id}}</td>
+                    <td class="col-md-2">{{ activity.name}}</td>
+                    <td class="col-md-8">{{ activity.description}}<td>
+                    <td><a href={{'/recipes/'+recipe_id+'/'+activity.activity_id+'/update' }}><button class="btn btn-info">Edit</a></button></td>
+                    <td><a href={{'/recipes/'+recipe_id+'/'+activity.activity_id+'/delete' }}><button class="btn btn-danger">Delete</button></a></td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+        </br>
+        </br>
+        </br>
+        </br>
+        <p><a href ={{'/create_activity/'+recipe_id}}><button type='button' class="btn btn-primary">New Procedure</button></a>
+        <a href="/recipes"><button class="btn btn-info">View recipes</button></a> </p>
     </div>
-    {% endblock %}
+{% endblock %}

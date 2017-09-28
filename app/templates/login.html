@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block nav %}
+{% extends "base.html" %}
+
+{% block nav %}
 <div class="container">
     <nav class="navbar navbar-inverse">
         <div class="container">
@@ -20,17 +22,19 @@
         </div>
     </nav>
 </div>
-{% endblock %} {% block body %}
-<h2 class="text-center">Yummy Recipe</h2>
-<form class="form-horizontal" action="" method="POST">
-    <div Class="form-group">
-        <label class="col-md-4 control-label" for="username">Username : </label>
-        <input Class="form-control" type="text" name="username" required="">
-    </div>
-    <div Class="form-group">
-        <label class="col-md-4 control-label" for="password">Password : </label>
-        <input Class="form-control" type="password" name="password" required="">
-    </div>
-    <button type="submit" Class="btn btn-success pull-right">Log in</button>
-</form>
+{% endblock %}
+{% block body %}
+<h2 class="text-center">Yummy Recipes Login</h2>
+    <form class="form-horizontal" action = "" method ="POST">
+        <div Class="form-group"> 
+            <label class="col-md-4 control-label" for = "username">Username : </label>
+            <input Class="form-control" type = "text" name = "username" required="">
+        </div>
+        <div Class="form-group">
+            <label class="col-md-4 control-label" for = "password">Password : </label>
+            <input Class ="form-control" type = "password" name = "password" required="">
+        </div>
+        <button type = "submit" Class="btn btn-success pull-right">Log in</button>
+        
+    </form>
 {% endblock %}

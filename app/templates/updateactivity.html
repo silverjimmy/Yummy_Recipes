@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block nav %}
+{% extends "base.html" %}
+
+{% block nav %}
 <div class="container">
     <nav class="navbar navbar-inverse">
         <div class="container">
@@ -21,20 +23,21 @@
     </nav>
 </div>
 
-{% endblock %} {% block body %}
-<h1>Recipe Detail Update</h1>
-<form action="" method="POST">
-    <div Class="form-group">
-        <label for="name">Name : </label>
-        <input Class="form-control" type="text" name="name" value="{{activity.name}}">
-    </div>
-    <div Class="form-group">
-        <label for="description">Description : </label>
-        <textarea Class="form-control" name="description" row="3">{{activity.description}}</textarea>
-    </div>
-
-
-    <button type="submit" Class="btn btn-primary pull-right">Save</button>
-</form>
-<p></p>
+{% endblock %}
+{% block body %}
+    <h1>Recipe Update</h1>
+    <form action = "" method ="POST">
+        <div Class="form-group"> 
+            <label for = "name">Recipe: </label>
+            <input Class="form-control" type = "text" name = "name" value = "{{activity.name}}">
+        </div>
+        <div Class="form-group">
+            <label for = "description">Procedure & ingredients : </label>
+            <textarea Class ="form-control resizedTextbox" name = "description" row ="3">{{activity.description}}</textarea>
+        </div>
+        
+        
+        <button type = "submit" Class="btn btn-primary pull-right">Update</button>
+    </form>
+    <p></p>
 {% endblock %}
