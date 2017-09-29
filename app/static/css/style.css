@@ -1,0 +1,49 @@
+.form_bg {
+    background-color: #eee;
+    color: #666;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    border: 1px solid #fff;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 320px;
+    height: 280px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.nav {
+    padding-top: 10px;
+}
+
+.nav li a {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 14px 10px;
+    margin-top: 5px;
+}
+
+.nav li {
+    list-style: none;
+    display: inline;
+}
+
+#main li {
+    list-style: none;
+}
+
+table {
+    width: 100%;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 9px;
+}
