@@ -9,6 +9,6 @@ install:
   - sudo pip install nose
   - sudo pip install coveralls
 script:
-  - nosetests --with-coverage
+  - nosetests --with-coverage --cover-package=app
 after_success:
   - coveralls
