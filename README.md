@@ -1,6 +1,7 @@
 
 #Yummy Recipe App
  ----------------
+ [![Coverage Status](https://coveralls.io/repos/github/silverjimmy/Yummy_recipes/badge.svg?branch=branch_1)](https://coveralls.io/github/silverjimmy/Yummy_recipes?branch=branch_1)
 
 This app is developed under the Andela SLC Challenge for Day2.
 
