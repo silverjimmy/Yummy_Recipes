@@ -1,5 +1,4 @@
-{% extends "base.html" %}
-{% block nav %}
+{% extends "base.html" %} {% block nav %}
 <div class="container">
     <nav class="navbar navbar-inverse">
         <div class="container">
@@ -22,19 +21,18 @@
     </nav>
 </div>
 
-{% endblock %}
-{% block body %}
-    <h1>Create New recipe </h1>
-    <form action = "" method ="POST">
-        <div Class="form-group"> 
-            <label for = "name">Recipe Name : </label>
-            <input Class="form-control" type = "text" name = "name">
-        </div>
-        <div Class="form-group">
-            <label for = "description">Description : </label>
-            <textarea Class ="form-control"  name = "description" row ="3"></textarea>
-        </div>
-        <button type = "submit" Class="btn btn-primary pull-right">Save</button>
-    </form>
-    <p></p>
+{% endblock %} {% block body %}
+<h1>Create New recipe </h1>
+<form action="" method="POST">
+    <div Class="form-group">
+        <label for="name">Recipe Name : </label>
+        <input Class="form-control" type="text" name="name" required="">
+    </div>
+    <div Class="form-group">
+        <label for="description">Procedure : </label>
+        <textarea Class="form-control" name="description" row="3" required=""></textarea>
+    </div>
+    <button type="submit" Class="btn btn-primary pull-right">Save</button>
+</form>
+<p></p>
 {% endblock %}

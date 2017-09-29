@@ -1,6 +1,4 @@
-{% extends "base2.html" %}
-
-{% block nav %}
+{% extends "base2.html" %} {% block nav %}
 <div class="container">
     <nav class="navbar navbar-inverse">
         <div class="container">
@@ -23,9 +21,8 @@
     </nav>
 </div>
 
-{% endblock %}
-{% block body %}
- <div class="container">
+{% endblock %} {% block body %}
+<div class="container">
     <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4" id="main">
@@ -33,14 +30,14 @@
         </div>
         <div Class="col-sm-4"></div>
     </div>
-    
+
     <div class="jumbotron">
-        <h3>Yummy Recipe List</h3>
+        <h3>Main Recipe List</h3>
         <table class="table-stripped table-hover">
             <thead>
                 <tr>
-                    <th>Main Recipe:</th>
-                    <th>Procedure & ingredients:</th>
+                    <th>Main Recipe</th>
+                    <th>Procedure & ingredients</th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -51,19 +48,19 @@
                 <tr>
                     <td class="col-md-2">{{ item.name}}</td>
                     <td class="col-md-8">{{ item.description}}</td>
-                    <td><a href={{'/recipes/'+item.recipe_id }}><button class="btn btn-success">Open</button></a></td>
-                    <td><a href={{'/recipes/'+item.recipe_id+'/update' }}><button class="btn btn-info">Update</button></a></td>
-                  <!--   <td><a href={{'/recipes/'+item.recipe_id+'/delete' }}><button class="btn btn-danger">Delete</button></a></td> -->
+                    <td><a href={{ '/recipes/'+item.recipe_id }}><button class="btn btn-success">Open</button></a></td>
+                    <td><a href={{ '/recipes/'+item.recipe_id+ '/update' }}><button class="btn btn-info">Update</button></a></td>
+                    <!--   <td><a href={{'/recipes/'+item.recipe_id+'/delete' }}><button class="btn btn-danger">Delete</button></a></td> -->
                 </tr>
                 {% endfor %}
-                
+
             </tbody>
         </table>
 
-    </br>
-    </br>
-    </br>
-    </br>
-        <a href ="/create_recipe"><button type='button' class="btn pull-right">New Recipe</button></a>
+        </br>
+        </br>
+        </br>
+        </br>
+        <a href="/create_recipe"><button type='button' class="btn pull-right">New Recipe</button></a>
     </div>
-{% endblock %}
+    {% endblock %}
