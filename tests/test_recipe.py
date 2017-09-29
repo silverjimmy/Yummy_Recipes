@@ -1,12 +1,12 @@
 """Module contains unittests for the recipelist class"""
 import unittest
-from app.classes.recipelist import recipelist
+from app.classes.recipe import recipe
 from app.classes.activity import Activity
 
 class Testrecipelist(unittest.TestCase):
     """Class contains tests methods in recipelist class"""
     def setUp(self):
-        self.myrecipelist = recipelist('Coffee',
+        self.myrecipelist = recipe('Coffee',
                                        'Procedure')
         self.myactivity = Activity("Use sundried coffee", "Grill the Coffe seeds")
 
