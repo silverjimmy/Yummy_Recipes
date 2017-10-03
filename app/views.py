@@ -46,13 +46,13 @@ def create_user():
         return redirect(url_for('index'))
     return render_template('newuser.html')
 
-@app.route('/create_recipe', methods=['Get', 'POST'])
+@app.route('/create_recipe', methods=['GET', 'POST'])
 def create_recipe():
     """View handles creating a new recipe"""
     if 'name' in session:
         if request.method == 'POST':
             PLAN.users[session['name']].create_recipe(request.form['name'],
-                                                          request.form['description'])
+                                                      request.form['description'])
             return redirect(url_for('view_recipes'))
         return render_template('newrecipe.html')
     return redirect(url_for('log_in'))
@@ -111,8 +111,8 @@ def update_recipe(recipe_id):
     if 'name' in session:
         if request.method == 'POST':
             PLAN.users[session['name']].update_recipe(recipe_id,
-                                                          request.form['name'],
-                                                          request.form['description'])
+                                                      request.form['name'],
+                                                      request.form['description'])
             return redirect(url_for('view_recipes'))
         recipe = PLAN.users[session['name']].get_recipe_from_id(recipe_id)
         return render_template('updaterecipe.html',
@@ -128,7 +128,8 @@ def update_activity(recipe_id, activity_id):
                                                         request.form['name'],
                                                         request.form['description'])
             return redirect(url_for('view_activities', recipe_id=recipe_id))
-        activity = PLAN.users[session['name']].get_recipe_from_id(recipe_id).object_from_id(activity_id)
+        activity = PLAN.users[session['name']].get_recipe_from_id
+        (recipe_id).object_from_id(activity_id)
         return render_template('updateactivity.html', activity=activity)
 
     return redirect(url_for('log_in'))
