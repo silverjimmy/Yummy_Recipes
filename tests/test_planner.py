@@ -8,25 +8,27 @@ class TestPlanner(unittest.TestCase):
     def setUp(self):
         """Setting up a user and Planner object for every test"""
         self.plan = Planner()
-        self.plan.create_user('Okello', 'jackson', 'okello', 'admin', 'okeloo_admin@google.com')
+
+        self.user1 = self.plan.create_user('Bruno', 'Herbert', 'bruno',
+                              '1234', 'silverjimy2@gmail.com')
+
+
+        # self.user('Bruno', 'Herbert', 'bruno','1234', 'silverjimy2@gmail.com')
+        self.user2 = self.plan.create_user('Okello', 'jackson', 'okello', 'admin', 'okeloo_admin@google.com')
     def test_create_user_success(self):
         """Test a user is created successfully"""
-        self.plan.create_user('Bruno', 'Herbert', 'bruno', '1234', 'silverjimmy2@gmail.com')
+        # self.plan.create_user('Judy', 'Herbert', 'bruno', '1234', 'silverjimmy2@gmail.com')
         self.assertEqual(len(self.plan.users), 2,
-                         msg="Length of the the users dictionary should be 2")
+                         msg="Length of the the users dictionary should be 4")
     def test_create_user_fail(self):
         """Test failure due to duplicate username"""
-        user1 = self.plan.create_user('Bruno',
-                                      'Herbert',
-                                      'bruno',
-                                      '1234',
-                                      'silverjimmy2@gmail.com')
+        # user1 = self.plan.create_user(self.user)
         user2 = self.plan.create_user('Bruno',
                                       'Herbert',
                                       'bruno',
                                       '1234',
                                       'silverjimmy2@gmail.com')
-        self.assertEqual([user1, user2], ['Success', 'Fail'])
+        self.assertEqual([self.user1, user2], ['Success', 'Fail'])
 
     def test_login_user_success(self):
         """Method updates the loged_in variable of the Planner class"""

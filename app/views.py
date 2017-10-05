@@ -118,6 +118,8 @@ def update_recipe(recipe_id):
         return render_template('updaterecipe.html',
                                recipe=recipe)
     return redirect(url_for('log_in'))
+
+
 @app.route('/recipes/<recipe_id>/<activity_id>/update', methods=['GET', 'POST'])
 def update_activity(recipe_id, activity_id):
     """View for updating activity"""
@@ -128,8 +130,8 @@ def update_activity(recipe_id, activity_id):
                                                         request.form['name'],
                                                         request.form['description'])
             return redirect(url_for('view_activities', recipe_id=recipe_id))
-        activity = PLAN.users[session['name']].get_recipe_from_id
-        (recipe_id).object_from_id(activity_id)
+        activity = PLAN.users[session['name']].get_recipe_from_id(
+            recipe_id).object_from_id(activity_id)
         return render_template('updateactivity.html', activity=activity)
 
     return redirect(url_for('log_in'))
