@@ -1,3 +1,7 @@
+#bg {
+    background-image: url('/static/bg-6.jpg')
+}
+
 .form_bg {
     background-color: #eee;
     color: #666;
