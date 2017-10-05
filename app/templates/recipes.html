@@ -32,19 +32,19 @@
     </div>
 
     <div class="jumbotron">
-        <h3>Main Recipe List</h3>
+        <h3>Recipe Categories</h3>
         <table class="table-stripped table-hover">
             <thead>
                 <tr>
-                    <th>Main Recipe</th>
-                    <th>Procedure & ingredients</th>
+                    <th>Category Name</th>
+                    <th>Category Description</th>
                     <th></th>
                     <th></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                {% for item in bucket %}
+                {% for item in recipeitem %}
                 <tr>
                     <td class="col-md-2">{{ item.name}}</td>
                     <td class="col-md-8">{{ item.description}}</td>
@@ -61,6 +61,6 @@
         </br>
         </br>
         </br>
-        <a href="/create_recipe"><button type='button' class="btn pull-right">New Recipe</button></a>
+        <a href="/create_recipe"><button type='button' class="btn pull-right">New Category</button></a>
     </div>
     {% endblock %}

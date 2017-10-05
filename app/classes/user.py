@@ -32,7 +32,7 @@ class User:
         """method returns all the recipes for the current user"""
         return self.recipes
     def view_recipe_activities(self, recipe_name):
-        """method returns a list of activities in a given bucket_list for the current user"""
+        """method returns a list of activities in a given recipe_list for the current user"""
         for recipe in self.recipes:
             if recipe.name == recipe_name:
                 return recipe.activities

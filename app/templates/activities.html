@@ -31,7 +31,7 @@
     </div>
 
     <div class="jumbotron">
-        <h3>Sub Recipe Name:</br>
+        <h3>Recipe Name:</br>
         </h3>
         <p style="font-size: 20px;color: orangered"><span><u>{{ recipe }}</u></span>
             <p>
@@ -40,7 +40,7 @@
                         <tr>
                             <th>id</th>
                             <th>Recipe Name</th>
-                            <th>Procedure & ingredients</th>
+                            <th>Preparation Procedure</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -64,7 +64,7 @@
                 </br>
                 </br>
                 </br>
-                <p><a href={{ '/create_activity/'+recipe_id}}><button type='button' class="btn btn-primary">New Procedure</button></a>
-                    <a href="/recipes"><button class="btn btn-info">View recipes</button></a> </p>
+                <p><a href={{ '/create_activity/'+recipe_id}}><button type='button' class="btn btn-primary">New Recipe</button></a>
+                    <a href="/recipes"><button class="btn btn-info">View Categories</button></a> </p>
     </div>
     {% endblock %}

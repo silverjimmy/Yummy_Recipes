@@ -61,8 +61,8 @@ def create_recipe():
 def view_recipes():
     """view lists all recipes current"""
     if 'name' in session:
-        bucket = PLAN.users[session['name']].view_recipes()
-        return render_template('recipes.html', bucket=bucket)
+        recipeitem = PLAN.users[session['name']].view_recipes()
+        return render_template('recipes.html', recipeitem=recipeitem)
     return redirect(url_for('log_in'))
 
 @app.route('/recipes/<recipe_id>/delete')
