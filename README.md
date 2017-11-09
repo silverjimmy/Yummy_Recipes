@@ -1,7 +1,7 @@
 #Yummy Recipe App
  ----------------
  
-[![Build Status](https://travis-ci.org/silverjimmy/Yummy_recipes.svg?branch=branch_1)](https://travis-ci.org/silverjimmy/Yummy_recipes)  [![Coverage Status](https://coveralls.io/repos/github/silverjimmy/Yummy_recipes/badge.svg?branch=branch_1)](https://coveralls.io/github/silverjimmy/Yummy_recipes?branch=branch_1)
+[![Build Status](https://travis-ci.org/silverjimmy/Yummy_recipes.svg?branch=branch_1)](https://travis-ci.org/silverjimmy/Yummy_recipes)  [![Coverage Status](https://coveralls.io/repos/github/silverjimmy/Yummy_recipes/badge.svg?branch=master)](https://coveralls.io/github/silverjimmy/Yummy_recipes?branch=master)
 
 This app is developed under the Andela SLC Challenge for Day2.
 
